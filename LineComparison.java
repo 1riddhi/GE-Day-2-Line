@@ -11,7 +11,10 @@ public class LineComparison {
         System.out.println("Length of Line-2: "+line2.calculateLength());
 
         if(line1.equals(line2)) System.out.println("Two lines are equal");
-        else System.out.println("Two lines are not equal");;
+        else System.out.println("Two lines are not equal");
+
+        line1.compareLines(line1, line2);
+        
 
     }
 
@@ -64,5 +67,15 @@ class Line {
 
     public static boolean equals(Line line1, Line line2){
         return line1.point1.x==line2.point1.x && line1.point1.y==line2.point1.y &&line1.point2.x==line2.point2.x && line1.point2.y==line2.point2.y;
+    }
+
+    public static void compareLines(Line line1, Line line2){
+         if(line1.calculateLength()==line2.calculateLength()) {
+            System.out.println("Length of two lines are equal");
+         }
+         else if(line1.calculateLength()>line2.calculateLength()){
+            System.out.println("Length of line1 is greater than length of line2");
+         }
+         else  System.out.println("Length of line1 is less than length of line2");
     }
 }
